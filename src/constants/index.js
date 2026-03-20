@@ -66,8 +66,30 @@ export const myProjects = [
       },
     ],
   },
-  {
+    {
     title: 'Dame & Creed (sfx edit) - Toji Fushiguro',
+    desc: 'An alternate rendition of the famous Creed edit, rebuilt from the ground up with a different pacing structure and clips. Where the audience can feel the aggression of the character.',
+    subdesc:
+      'Making this video helped me learn more about transition timing, and deliberate audio manipulation.',
+    href: 'https://www.tiktok.com/@eternalglazer/video/7616482749960047879',
+    texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1773972454/toji_creed_x2zutr.mov',
+    logo: '/assets/project-logo4.jpeg',
+    logoStyle: {
+      backgroundColor: '#0E1F38',
+      border: '0.2px solid #0E2D58',
+      boxShadow: '0px 0px 60px 0px #2F67B64D',
+    },
+    spotlight: '/assets/spotlight4.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Capcut',
+        path: '/assets/capcut.svg',
+      },
+    ],
+  },
+  {
+    title: '4 raws (sfx edit) - Toji Fushiguro',
     desc: 'A meticulously crafted SFX edit that layers custom impact sounds of punches, whooshes, and bass drops. Intentional gaps were introduced into the audio track to create moments of tension and release, making each hit land with significantly more weight than the original clip.',
     subdesc:
       'The editing philosophy here was chaos. Fast-speed intentional audio cuts and sound effect. The storytelling arc was structured to mirror a fight sequence, keeping viewers locked in from first frame to last.',
@@ -82,28 +104,6 @@ export const myProjects = [
       boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
     },
     spotlight: '/assets/spotlight3.png',
-    tags: [
-      {
-        id: 1,
-        name: 'Capcut',
-        path: '/assets/capcut.svg',
-      },
-    ],
-  },
-  {
-    title: 'Dame & Creed (Alt Cut) - Toji Fushiguro',
-    desc: 'An alternate rendition of the Creed edit, rebuilt from the ground up with a different pacing structure and clip selection. Where the audience can feel the aggression of the character.',
-    subdesc:
-      'Making this video helped me learn more about transition timing, and deliberate audio manipulation.',
-    href: 'https://www.tiktok.com/@eternalglazer/video/7616482749960047879',
-    texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1773972454/toji_creed_x2zutr.mov',
-    logo: '/assets/project-logo4.jpeg',
-    logoStyle: {
-      backgroundColor: '#0E1F38',
-      border: '0.2px solid #0E2D58',
-      boxShadow: '0px 0px 60px 0px #2F67B64D',
-    },
-    spotlight: '/assets/spotlight4.png',
     tags: [
       {
         id: 1,
