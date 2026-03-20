@@ -1,9 +1,9 @@
-import { useRef, useEffect } from 'react';
-import { useGLTF, useAnimations, useVideoTexture } from '@react-three/drei';
+import { useRef, useEffect, useState } from 'react';
+import { useGLTF, useAnimations, useVideoTexture, Html } from '@react-three/drei';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-const DemoComputer = (props) => {
+const DemoComputer = ({ onToggle, isPaused, ...props }) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/models/computer.glb');
   const { actions } = useAnimations(animations, group);
@@ -17,10 +17,8 @@ const DemoComputer = (props) => {
     const video = txt.source?.data;
     if (!video || !(video instanceof HTMLVideoElement)) return;
 
-    // Keep a ref to the unlock handler so we can remove it on cleanup
     let unlockHandler = null;
 
-    // Silence every other video immediately
     document.querySelectorAll('video').forEach((v) => {
       if (v !== video) {
         v.muted = true;
@@ -33,14 +31,11 @@ const DemoComputer = (props) => {
     video.volume = 0.25;
 
     video.play().catch(() => {
-      // Browser blocked autoplay with sound — play muted silently
       video.muted = true;
       video.play().catch(() => {});
 
-      // Only add unlock listener if THIS video is still the active one
       unlockHandler = () => {
-        // Check the video wasn't already swapped out (muted = sign it was cleaned up)
-        if (!video.muted) return; // already unmuted somehow, skip
+        if (!video.muted) return;
         video.muted = false;
         video.volume = 0.25;
         video.play().catch(() => {});
@@ -49,12 +44,10 @@ const DemoComputer = (props) => {
     });
 
     return () => {
-      // Cancel any pending unlock listener for this video
       if (unlockHandler) {
         window.removeEventListener('click', unlockHandler);
         unlockHandler = null;
       }
-      // Mute and pause this video so next one has a clean slate
       video.muted = true;
       video.pause();
     };
@@ -77,9 +70,43 @@ const DemoComputer = (props) => {
           material={nodes['monitor-screen'].material}
           position={[0.127, 1.831, 0.511]}
           rotation={[1.571, -0.005, 0.031]}
-          scale={[0.661, 0.608, 0.401]}>
+          scale={[0.661, 0.608, 0.401]}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (onToggle) onToggle();
+          }}
+          onPointerOver={() => { document.body.style.cursor = 'pointer'; }}
+          onPointerOut={() => { document.body.style.cursor = 'none'; }}
+        >
           <meshBasicMaterial map={txt} toneMapped={false} />
+
+          {/* Pause overlay rendered on the screen surface in 3D space */}
+          <Html
+            position={[0, 0, 0.01]}
+            center
+            style={{ pointerEvents: 'none', width: 60, height: 60 }}
+            distanceFactor={1.2}
+          >
+            <div
+              style={{
+                width: 60,
+                height: 60,
+                borderRadius: '50%',
+                background: 'rgba(0,0,0,0.6)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                opacity: isPaused ? 1 : 0,
+                transition: 'opacity 0.2s ease',
+              }}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </Html>
         </mesh>
+
         <group name="RootNode" position={[0, 1.093, 0]} rotation={[-Math.PI / 2, 0, -0.033]} scale={0.045}>
           <group name="Screen001" position={[5.658, 1.643, 0.812]} rotation={[Math.PI / 2, 0, 0]} scale={[0.923, 0.855, 0.855]} />
           <group name="Screen002" position={[5.658, 1.644, 0.812]} rotation={[Math.PI / 2, 0, 0]} scale={[0.923, 0.855, 0.855]} />
@@ -94,6 +121,7 @@ const DemoComputer = (props) => {
           <group name="Tower-light-007" position={[16.089, -3.47, -14.495]} rotation={[Math.PI / 2, 0, 0]} scale={0.963} />
           <group name="Tower-light-008" position={[15.155, -3.47, -14.495]} rotation={[Math.PI / 2, 0, 0]} scale={0.963} />
         </group>
+
         <group
           name="Monitor-B-_computer_0"
           position={[0.266, 1.132, 0.051]}

@@ -33,6 +33,16 @@ const Projects = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft') handleNavigation('previous');
+      if (e.key === 'ArrowRight') handleNavigation('next');
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) => {
       if (direction === 'previous') {
@@ -99,13 +109,13 @@ const Projects = () => {
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 w-full">
         {/* Left — project info */}
         <div
-          className="flex flex-col gap-5 relative sm:p-8 py-8 px-5"
+          className="flex flex-col relative sm:p-8 py-8 px-5"
           style={{
             background: 'var(--surface)',
             border: '1px solid var(--border)',
             borderRadius: 16,
             overflow: 'hidden',
-            minHeight: '600px',
+            height: '600px',
           }}
         >
           {/* Spotlight image */}
@@ -136,7 +146,10 @@ const Projects = () => {
           </div>
 
           {/* Text */}
-          <div className="flex flex-col gap-4 relative z-10 my-4">
+          <div
+            className="flex flex-col gap-4 relative z-10 my-4 flex-1 overflow-y-auto"
+            style={{ minHeight: 0 }}
+          >
             <p
               className="text-2xl font-bold animatedText"
               style={{
@@ -218,7 +231,11 @@ const Projects = () => {
           {/* Navigation */}
           <div className="flex justify-between items-center mt-4 relative z-10">
             <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
-              <img src="/assets/left-arrow.png" alt="previous" />
+              <img
+                src="/assets/left-arrow.png"
+                alt="previous"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
             </button>
 
             {/* Dot indicators */}
@@ -241,7 +258,11 @@ const Projects = () => {
             </div>
 
             <button className="arrow-btn" onClick={() => handleNavigation('next')}>
-              <img src="/assets/right-arrow.png" alt="next" style={{ width: 14, height: 14 }} />
+              <img
+                src="/assets/right-arrow.png"
+                alt="next"
+                style={{ width: 14, height: 14, filter: 'brightness(0) invert(1)' }}
+              />
             </button>
           </div>
         </div>

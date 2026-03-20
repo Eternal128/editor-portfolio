@@ -139,8 +139,8 @@ export const myProjects = [
     desc: 'Check out my other works @eternalglazer on tiktok and YouTube.',
     subdesc:
       'It is a great pleasure to have your interest!',
-    href: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1774024719/video-output-D48B44C9-D203-48E6-A4E8-3B78E925646A-1_fgdyxn.mov',
-    texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1774024719/video-output-D48B44C9-D203-48E6-A4E8-3B78E925646A-1_fgdyxn.mov',
+    href: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1774026101/spiderman_pdrwuf.mov',
+    texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1774026101/spiderman_pdrwuf.mov',
     logo: '/assets/project-logo6.jpeg',
     logoStyle: {
       backgroundColor: '#1C1A43',
