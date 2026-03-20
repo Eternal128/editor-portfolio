@@ -94,7 +94,7 @@ export const myProjects = [
     subdesc:
       'The editing philosophy here was chaos. Fast-speed intentional audio cuts and sound effect. The storytelling arc was structured to mirror a fight sequence, keeping viewers locked in from first frame to last.',
     href: 'https://www.tiktok.com/@eternalglazer/video/7616482749960047879',
-    texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1773972362/4raws_-_toji_-_sped_up_cmnd78.mov',
+    texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1774021264/4_Raws_-_Toji_Fushiguro_oyvmqf.mp4',
     logo: '/assets/project-logo3.jpeg',
     logoStyle: {
       backgroundColor: '#60f5a1',
@@ -120,6 +120,28 @@ export const myProjects = [
     href: 'https://www.youtube.com/watch?v=4PL17-3IiXw',
     texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1773972756/the_strongest_ebutvq.mp4',
     logo: '/assets/project-logo5.jpeg',
+    logoStyle: {
+      backgroundColor: '#1C1A43',
+      border: '0.2px solid #252262',
+      boxShadow: '0px 0px 60px 0px #635BFF4D',
+    },
+    spotlight: '/assets/spotlight5.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Capcut',
+        path: '/assets/capcut.svg',
+      },
+    ],
+  },
+  {
+    title: 'Thanks for watching through!',
+    desc: 'Check out my other works @eternalglazer on tiktok and YouTube.',
+    subdesc:
+      'It is a great pleasure to have your interest!',
+    href: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1774024719/video-output-D48B44C9-D203-48E6-A4E8-3B78E925646A-1_fgdyxn.mov',
+    texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1774024719/video-output-D48B44C9-D203-48E6-A4E8-3B78E925646A-1_fgdyxn.mov',
+    logo: '/assets/project-logo6.jpeg',
     logoStyle: {
       backgroundColor: '#1C1A43',
       border: '0.2px solid #252262',
