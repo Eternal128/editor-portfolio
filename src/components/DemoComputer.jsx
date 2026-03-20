@@ -1,9 +1,9 @@
-import { useRef, useEffect, useState } from 'react';
-import { useGLTF, useAnimations, useVideoTexture, Html } from '@react-three/drei';
+import { useRef, useEffect } from 'react';
+import { useGLTF, useAnimations, useVideoTexture } from '@react-three/drei';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-const DemoComputer = ({ onToggle, isPaused, ...props }) => {
+const DemoComputer = ({ onToggle, ...props }) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/models/computer.glb');
   const { actions } = useAnimations(animations, group);
@@ -64,6 +64,7 @@ const DemoComputer = ({ onToggle, isPaused, ...props }) => {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
+        {/* Clickable screen mesh */}
         <mesh
           name="monitor-screen"
           geometry={nodes['monitor-screen'].geometry}
@@ -79,34 +80,7 @@ const DemoComputer = ({ onToggle, isPaused, ...props }) => {
           onPointerOut={() => { document.body.style.cursor = 'none'; }}
         >
           <meshBasicMaterial map={txt} toneMapped={false} />
-
-          {/* Pause overlay rendered on the screen surface in 3D space */}
-          <Html
-            position={[0, 0, 0.01]}
-            center
-            style={{ pointerEvents: 'none', width: 60, height: 60 }}
-            distanceFactor={1.2}
-          >
-            <div
-              style={{
-                width: 60,
-                height: 60,
-                borderRadius: '50%',
-                background: 'rgba(0,0,0,0.6)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                opacity: isPaused ? 1 : 0,
-                transition: 'opacity 0.2s ease',
-              }}
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-          </Html>
         </mesh>
-
         <group name="RootNode" position={[0, 1.093, 0]} rotation={[-Math.PI / 2, 0, -0.033]} scale={0.045}>
           <group name="Screen001" position={[5.658, 1.643, 0.812]} rotation={[Math.PI / 2, 0, 0]} scale={[0.923, 0.855, 0.855]} />
           <group name="Screen002" position={[5.658, 1.644, 0.812]} rotation={[Math.PI / 2, 0, 0]} scale={[0.923, 0.855, 0.855]} />
@@ -121,7 +95,6 @@ const DemoComputer = ({ onToggle, isPaused, ...props }) => {
           <group name="Tower-light-007" position={[16.089, -3.47, -14.495]} rotation={[Math.PI / 2, 0, 0]} scale={0.963} />
           <group name="Tower-light-008" position={[15.155, -3.47, -14.495]} rotation={[Math.PI / 2, 0, 0]} scale={0.963} />
         </group>
-
         <group
           name="Monitor-B-_computer_0"
           position={[0.266, 1.132, 0.051]}
