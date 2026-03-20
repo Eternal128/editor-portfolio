@@ -24,9 +24,9 @@ export const navLinks = [
 export const myProjects = [
   {
     title: 'Les Instrumental - Toji Fushiguro',
-    desc: 'This project holds a special place in my heart. Using 3D text effects, masking, and also good storytelling, I made a 1.8M+ views edit video on Tiktok.',
+    desc: 'A passion project that became one of my most successful edits to date. Leveraging advanced 3D text compositing, precise masking techniques, and a deep understanding of visual storytelling, I crafted a cinematic narrative around Toji Fushiguro that resonated with over 1.8 million viewers on TikTok.',
     subdesc:
-      'Toji has always been one of those characters I just wanted to edit.',
+      'The pacing mirrors Toji\'s brutal, unhurried nature. The 3D typography was layered to feel like it existed inside the scene rather than on top of it, creating a sense of depth that elevated the edit.',
     href: 'https://www.tiktok.com/@eternalglazer/video/7574949774575602951',
     texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1773972350/toji_mograph_hbqmsu.mov',
     logo: '/assets/project-logo1.png',
@@ -46,9 +46,9 @@ export const myProjects = [
   },
   {
     title: '21 Savage (sfx edit) - Toji Fushiguro',
-    desc: 'Made a 1.8M+ views video edit using Toji Fushiguro with synced beats to make the original song more catchy.',
+    desc: 'A high-impact SFX edit built around the rhythm and aggression of 21 Savage\'s production. Each beat drop and pause was mapped precisely to Toji\'s most iconic moments, creating a sense of synchronization that made the video feel less like an edit and more like an official music video.',
     subdesc:
-      'Had a conversion rate of 350K+ likes and 75K+ saves.',
+      '1.8M+ views, 350K+ likes, and 75K+ saves. The metric shows that this video outperforms standard engagement benchmarks on the platform.',
     href: 'https://www.tiktok.com/@eternalglazer/video/7567135113104952594',
     texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1773972392/toji_ofjtmn.mov',
     logo: '/assets/project-logo2.jpeg',
@@ -68,9 +68,9 @@ export const myProjects = [
   },
   {
     title: 'Dame & Creed (sfx edit) - Toji Fushiguro',
-    desc: 'Sound effect editing with added punches, intentional gaps in songs to make a more satisfying video.',
+    desc: 'A meticulously crafted SFX edit that layers custom impact sounds of punches, whooshes, and bass drops. Intentional gaps were introduced into the audio track to create moments of tension and release, making each hit land with significantly more weight than the original clip.',
     subdesc:
-      'With a focus on telling a compelling story for people on Tiktok.',
+      'The editing philosophy here was chaos. Fast-speed intentional audio cuts and sound effect. The storytelling arc was structured to mirror a fight sequence, keeping viewers locked in from first frame to last.',
     href: 'https://www.tiktok.com/@eternalglazer/video/7616482749960047879',
     texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1773972362/4raws_-_toji_-_sped_up_cmnd78.mov',
     logo: '/assets/project-logo3.jpeg',
@@ -91,10 +91,10 @@ export const myProjects = [
     ],
   },
   {
-    title: 'Dame & Creed (sfx edit) - Toji Fushiguro',
-    desc: 'Sound effect editing with added punches, intentional gaps in songs to make a more satisfying video.',
+    title: 'Dame & Creed (Alt Cut) - Toji Fushiguro',
+    desc: 'An alternate rendition of the Creed edit, rebuilt from the ground up with a different pacing structure and clip selection. Where the audience can feel the aggression of the character.',
     subdesc:
-      'With a focus on telling a compelling story for people on Tiktok.',
+      'Making this video helped me learn more about transition timing, and deliberate audio manipulation.',
     href: 'https://www.tiktok.com/@eternalglazer/video/7616482749960047879',
     texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1773972454/toji_creed_x2zutr.mov',
     logo: '/assets/project-logo4.jpeg',
@@ -114,9 +114,9 @@ export const myProjects = [
   },
   {
     title: 'The Strongest - Gojo Satoru',
-    desc: 'Invincible title card edit with Gojo Satoru as its subject.',
+    desc: 'A title card sequence edit inspired by the Invincible animated series, reimagined with Gojo Satoru as the subject. The project involved sourcing the original title card assets, replicating the typography and motion style, and timing dialogue clips to hit on precise beats.',
     subdesc:
-      'Built with importing the title card background, font and timing the dialogues to cut perfectly.',
+      'What made this edit particularly demanding was the precision required in the dialogue sync. Each line had to cut on the exact frame where the emotional weight peaked. The final result is a piece that works both as a fan edit and as a standalone cinematic moment.',
     href: 'https://www.youtube.com/watch?v=4PL17-3IiXw',
     texture: 'https://res.cloudinary.com/daetzwh6x/video/upload/v1773972756/the_strongest_ebutvq.mp4',
     logo: '/assets/project-logo5.jpeg',
@@ -151,9 +151,9 @@ export const workExperiences = [
   {
     id: 1,
     name: 'Tiktok',
-    pos: 'Video Editor',
+    pos: 'Video Editor & Content Creator',
     duration: '2025 - Present',
-    title: "Consistently producing high-quality content with over 1.1M+ likes and 7M+ views over a few weeks. Editing things that I find to be aesthetic and fun to play around with.",
+    title: "Independently building and growing a content brand on TikTok, consistently producing high-quality video edits that have accumulated over 7M+ views and 1.1M+ likes within weeks of posting. Each piece is conceived, edited, and published without a team — from clip selection and SFX design to color grading and platform optimization.",
     icon: '/assets/tiktok.svg',
     animation: 'victory',
   },
@@ -162,7 +162,7 @@ export const workExperiences = [
     name: 'Ernst and Young',
     pos: 'AI Development Intern',
     duration: 'May 2025 - August 2025',
-    title: "",
+    title: "Contributing to AI-driven development initiatives within one of the world's leading professional services firms. Collaborating with cross-functional teams to design, test, and deploy intelligent solutions that streamline enterprise workflows — applying both technical depth and creative problem-solving in a fast-paced consulting environment.",
     icon: '/assets/ey.svg',
     animation: 'clapping',
   },

@@ -4,27 +4,32 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        generalsans: ['General Sans', 'sans-serif'],
+        generalsans: ['Syne', 'sans-serif'],
+        mono: ['Space Mono', 'monospace'],
+        serif: ['DM Serif Display', 'serif'],
       },
       colors: {
         black: {
           DEFAULT: '#000',
-          100: '#010103',
-          200: '#0E0E10',
-          300: '#1C1C21',
-          500: '#3A3A49',
-          600: '#1A1A1A',
+          100: '#050608',
+          200: '#0c0d11',
+          300: '#12141a',
+          500: '#1c1e28',
+          600: '#16181f',
         },
         white: {
           DEFAULT: '#FFFFFF',
-          800: '#E4E4E6',
-          700: '#D6D9E9',
-          600: '#AFB0B6',
-          500: '#62646C',
+          800: '#e8e4db',
+          700: '#c8cadd',
+          600: '#9da0ad',
+          500: '#6b6d78',
         },
       },
       backgroundImage: {
         terminal: "url('/assets/terminal.png')",
+      },
+      animation: {
+        'fade-up': 'section-reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both',
       },
     },
   },

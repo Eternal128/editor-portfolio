@@ -11,50 +11,113 @@ const WorkExperience = () => {
 
   return (
     <section className="c-space my-20" id="work">
-      <div className="w-full text-white-600">
-        <p className="head-text">My Work Experience</p>
+      <div className="section-tag mb-2">Experience</div>
+      <h2 className="head-text mb-12">Work History</h2>
 
-        <div className="work-container">
-          <div className="work-canvas">
-            <Canvas>
-              <ambientLight intensity={7} />
-              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-              <directionalLight position={[10, 10, 10]} intensity={1} />
-              <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
+      <div className="work-container">
+        {/* 3D Canvas — unchanged model */}
+        <div className="work-canvas" style={{ minHeight: 380 }}>
+          <Canvas>
+            <ambientLight intensity={7} />
+            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+            <directionalLight position={[10, 10, 10]} intensity={1} />
+            <pointLight position={[-5, 5, 0]} intensity={0.4} color="#5b6af5" />
+            <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
+            <Suspense fallback={<CanvasLoader />}>
+              <Developer position-y={-3} scale={3} animationName={animationName} />
+            </Suspense>
+          </Canvas>
+        </div>
 
-              <Suspense fallback={<CanvasLoader />}>
-                <Developer position-y={-3} scale={3} animationName={animationName} />
-              </Suspense>
-            </Canvas>
-          </div>
-
-          <div className="work-content">
-            <div className="sm:py-10 py-5 sm:px-5 px-2.5">
-              {workExperiences.map((item, index) => (
-                <div
-                  key={index}
-                  onClick={() => setAnimationName(item.animation.toLowerCase())}
-                  onPointerOver={() => setAnimationName(item.animation.toLowerCase())}
-                  onPointerOut={() => setAnimationName('idle')}
-                  className="work-content_container group">
-                  <div className="flex flex-col h-full justify-start items-center py-2">
-                    <div className="work-content_logo">
-                      <img className="w-full h-full" src={item.icon} alt="" />
-                    </div>
-
-                    <div className="work-content_bar" />
+        {/* Experience list */}
+        <div className="work-content">
+          <div className="sm:py-10 py-6 sm:px-6 px-4">
+            {workExperiences.map((item, index) => (
+              <div
+                key={index}
+                onClick={() => setAnimationName(item.animation.toLowerCase())}
+                onPointerOver={() => setAnimationName(item.animation.toLowerCase())}
+                onPointerOut={() => setAnimationName('idle')}
+                className="work-content_container group"
+              >
+                {/* Logo */}
+                <div className="flex flex-col h-full justify-start items-center py-2">
+                  <div className="work-content_logo">
+                    <img className="w-full h-full object-contain" src={item.icon} alt={item.name} />
                   </div>
-
-                  <div className="sm:p-5 px-2.5 py-5">
-                    <p className="font-bold text-white-800">{item.name}</p>
-                    <p className="text-sm mb-5">
-                      {item.pos} -- <span>{item.duration}</span>
-                    </p>
-                    <p className="group-hover:text-white transition-all ease-in-out duration-500">{item.title}</p>
-                  </div>
+                  {index < workExperiences.length - 1 && (
+                    <div
+                      style={{
+                        flex: 1,
+                        width: 1,
+                        marginTop: 12,
+                        background: 'var(--border)',
+                        minHeight: 32,
+                      }}
+                    />
+                  )}
                 </div>
-              ))}
-            </div>
+
+                {/* Content */}
+                <div className="sm:p-5 px-3 py-4">
+                  <div className="flex items-start justify-between gap-4 mb-2">
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-display)',
+                        fontWeight: 700,
+                        fontSize: '1.05rem',
+                        color: 'var(--paper)',
+                        letterSpacing: '-0.01em',
+                      }}
+                    >
+                      {item.name}
+                    </p>
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.58rem',
+                        letterSpacing: '0.15em',
+                        color: 'var(--muted)',
+                        whiteSpace: 'nowrap',
+                        marginTop: 3,
+                      }}
+                    >
+                      {item.duration}
+                    </span>
+                  </div>
+
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.65rem',
+                      letterSpacing: '0.18em',
+                      textTransform: 'uppercase',
+                      color: 'var(--accent)',
+                      marginBottom: 12,
+                    }}
+                  >
+                    {item.pos}
+                  </p>
+
+                  {item.title && (
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-display)',
+                        fontWeight: 400,
+                        fontSize: '0.9rem',
+                        color: 'var(--muted)',
+                        lineHeight: 1.65,
+                        letterSpacing: '0.01em',
+                        transition: 'color 0.4s var(--ease-out)',
+                      }}
+                      className="group-hover:text-white"
+                    >
+                      {item.title}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
