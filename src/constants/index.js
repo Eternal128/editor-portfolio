@@ -162,7 +162,7 @@ export const workExperiences = [
     name: 'Ernst and Young',
     pos: 'AI Development Intern',
     duration: 'May 2025 - August 2025',
-    title: "Contributing to AI-driven development initiatives within one of the world's leading professional services firms. Collaborating with cross-functional teams to design, test, and deploy intelligent solutions that streamline enterprise workflows — applying both technical depth and creative problem-solving in a fast-paced consulting environment.",
+    title: "Contributing to AI-driven development initiatives within one of the world's leading professional services firms. Collaborating with cross-functional teams to design, test, and deploy intelligent solutions that streamline enterprise workflows.",
     icon: '/assets/ey.svg',
     animation: 'clapping',
   },
