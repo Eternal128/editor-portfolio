@@ -32,8 +32,8 @@ const About = () => {
             <div>
               <p className="grid-headtext">Hi, I'm James William Hanzell</p>
               <p className="grid-subtext">
-                With a spirit to get things done, I always produce results I'm proud to claim.
-                Every edit has intent — every frame tells a story.
+                I'm a second year student studying Computer Science in the University of Toronto!
+                I always have the mindset to finish anything I started and give it my best!
               </p>
             </div>
           </div>
